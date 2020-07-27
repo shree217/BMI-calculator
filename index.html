@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BMI calculator</title>
+	<link rel="stylesheet" href="path/to/font-awesome.min.css">
+	<script src="https://kit.frontawesome.com/a8136914c.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Grenze+Gotisch:wght@300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css"> 
+</head>
+<body>
+	<h1><span class="styling">BMI </span><span class="list"> Calculator</span></h1>
+	<div class="input1">
+		<input type="text" id="height" placeholder="Enter the height in Cm">
+	</div>
+	<div class="second">
+		<input type="text" id="weight" placeholder="Enter the weight in Kg">
+	</div>
+
+	<div class="button" onclick="BMI()"><button class="enter">Calculate</button></div>
+	<div class="text"><p id="result"> RESULT </p></div>
+
+	<script type="text/javascript">
+		
+		function BMI(){
+			var h=document.getElementById('height').value;
+			var w=document.getElementById('weight').value;
+			var val =w/(h/100*h/100);
+			var bmi =(val.toFixed(2));
+
+			if(bmi<19){
+				document.getElementById("result").innerHTML ="Your BMI value "+bmi+" denotes that you are underweight"; 
+			}
+
+			else if(bmi>=19 && bmi<=25){
+				document.getElementById("result").innerHTML ="Your BMI value "+bmi+" denotes that you are just perfect";
+			}
+			else{
+				document.getElementById("result").innerHTML ="Your BMI value "+bmi+" denotes that you are overweight";
+			}
+
+			
+		}
+	</script>
+</body>
+</html>
